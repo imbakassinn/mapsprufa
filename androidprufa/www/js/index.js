@@ -20,7 +20,7 @@
         document.addEventListener("deviceready", onDeviceReady, false);
     }
     function onDeviceReady() {
-    $('#takki').click(function() {
+    $('#takki').vclick(function() {
       var str = $('#leit').val();
       $('#spurning').hide();
       var m = $.getJSON( "https://api.500px.com/v1/photos/search?term="+str+"&consumer_key=hbn1DGW8hBsaPxDviwkCA3yLZquFl8rLMzBafrw5", function(jd) {
