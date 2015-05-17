@@ -16,37 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-var app = {
-    // Application Constructor
-    initialize: function() {
-        this.bindEvents();
-    },
-    // Bind Event Listeners
-    //
-    // Bind any events that are required on startup. Common events are:
-    // 'load', 'deviceready', 'offline', and 'online'.
-    bindEvents: function() {
-        document.addEventListener('deviceready', this.onDeviceReady, false);
-    },
-    // deviceready Event Handler
-    //
-    // The scope of 'this' is the event. In order to call the 'receivedEvent'
-    // function, we must explicitly call 'app.receivedEvent(...);'
-    onDeviceReady: function() {
-        app.receivedEvent('deviceready');
-    },
-    // Update DOM on a Received Event
-    receivedEvent: function(id) {
-        var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
-
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
-
-        console.log('Received Event: ' + id);
-    }
-    var m = $.getJSON( "https://api.500px.com/v1/photos/search?term=sverrir&consumer_key=hbn1DGW8hBsaPxDviwkCA3yLZquFl8rLMzBafrw5", function(jd) {
+ var m = $.getJSON( "https://api.500px.com/v1/photos/search?term=sverrir&consumer_key=hbn1DGW8hBsaPxDviwkCA3yLZquFl8rLMzBafrw5", function(jd) {
     $('#h1').html('<img src="' + jd.photos[0].image_url + '">');
     $('#h2').html('<img src="' + jd.photos[1].image_url + '">');
     $('#h3').html('<img src="' + jd.photos[2].image_url + '">');
@@ -54,5 +24,4 @@ var app = {
     $('#v2').html('<img src="' + jd.photos[4].image_url + '">');
     $('#v3').html('<img src="' + jd.photos[5].image_url + '">');
   });
-};
 
