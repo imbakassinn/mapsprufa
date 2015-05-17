@@ -46,4 +46,13 @@ var app = {
 
         console.log('Received Event: ' + id);
     }
+    var m = $.getJSON( "https://api.500px.com/v1/photos/search?term=sverrir&consumer_key=hbn1DGW8hBsaPxDviwkCA3yLZquFl8rLMzBafrw5", function(jd) {
+    $('#h1').html('<img src="' + jd.photos[0].image_url + '">');
+    $('#h2').html('<img src="' + jd.photos[1].image_url + '">');
+    $('#h3').html('<img src="' + jd.photos[2].image_url + '">');
+    $('#v1').html('<img src="' + jd.photos[3].image_url + '">');
+    $('#v2').html('<img src="' + jd.photos[4].image_url + '">');
+    $('#v3').html('<img src="' + jd.photos[5].image_url + '">');
+  });
 };
+
