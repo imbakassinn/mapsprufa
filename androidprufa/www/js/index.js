@@ -16,9 +16,13 @@
  * specific language governing permissions and limitations
  * under the License.
  */
- var m = $.getJSON( "https://api.500px.com/v1/photos/search?term=sverrir&consumer_key=hbn1DGW8hBsaPxDviwkCA3yLZquFl8rLMzBafrw5", function(jd) {
-    $('#v1').html('<img src="' + jd.photos[0].image_url + '">');
-    $('#v2').html('<img src="' + jd.photos[1].image_url + '">');
-    $('#v3').html('<img src="' + jd.photos[2].image_url + '">');
+    $('#takki').click(function() {
+      var str = $('#leit').val();
+      $('#spurning').hide();
+      var m = $.getJSON( "https://api.500px.com/v1/photos/search?term="+str+"&consumer_key=hbn1DGW8hBsaPxDviwkCA3yLZquFl8rLMzBafrw5", function(jd) {
+      $('#v1').html('<img src="' + jd.photos[0].image_url + '">');
+      $('#v2').html('<img src="' + jd.photos[1].image_url + '">');
+      $('#v3').html('<img src="' + jd.photos[2].image_url + '">');
+    });
   });
 
