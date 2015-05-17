@@ -16,6 +16,10 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+     function onLoad() {
+        document.addEventListener("deviceready", onDeviceReady, false);
+    }
+    function onDeviceReady() {
     $('#takki').click(function() {
       var str = $('#leit').val();
       $('#spurning').hide();
@@ -25,4 +29,4 @@
       $('#v3').html('<img src="' + jd.photos[2].image_url + '">');
     });
   });
-
+}
