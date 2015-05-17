@@ -113,3 +113,21 @@ h1 {
     animation:fade 3000ms infinite;
     -webkit-animation:fade 3000ms infinite;
 }
+
+#allt {
+  width:300px;
+  height:100%;
+  }
+#vinstri {
+  width:150px;
+  height:100%;
+  float:left;
+}
+#haegri {
+  width:150px;
+  height:100%;
+  float:left;
+}
+.mynd {
+  padding-top:5px;
+}
