@@ -16,11 +16,6 @@
  * specific language governing permissions and limitations
  * under the License.
  */
- consolelog('prufa');
-     function onLoad() {
-        document.addEventListener("deviceready", onDeviceReady, false);
-    }
-    function onDeviceReady() {
     $('#takki').bind('touchstart', function(){
       var str = $('#leit').val();
       $('#spurning').hide();
@@ -30,4 +25,3 @@
       $('#v3').html('<img src="' + jd.photos[2].image_url + '">');
     });
   });
-}
