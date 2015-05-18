@@ -16,21 +16,18 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-$(document).ready(function() {
-    // are we running in native app or in a browser?
-    window.isphone = false;
-    if(document.URL.indexOf("http://") === -1 
-        && document.URL.indexOf("https://") === -1) {
-        window.isphone = true;
-    }
+ function deviceReady() {
+    
+}
+    
+function init() {
+    document.addEventListener("deviceready", deviceReady, true);
+}
 
-    if( window.isphone ) {
-        document.addEventListener("deviceready", onDeviceReady, false);
-    } else {
-        onDeviceReady();
-    }
+$(document).ready(function() {
+    
 });
-function onDeviceReady() {
+
     $('#takki').bind('touchstart', function(){
       var str = $('#leit').val();
       $('#spurning').hide();
@@ -40,4 +37,3 @@ function onDeviceReady() {
       $('#v3').html('<img src="' + jd.photos[2].image_url + '">');
     });
   });
-}
