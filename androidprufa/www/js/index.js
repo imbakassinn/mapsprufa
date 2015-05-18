@@ -25,15 +25,34 @@ function init() {
 }
 
 $(document).ready(function() {
-    
-});
-
-    $('#takki').bind('touchstart', function(){
+	var sida = 1;
+	 var process = true;
+    $('#takki').bind('touchstart click', function(){
+	  process = false;
       var str = $('#leit').val();
-      $('#spurning').hide();
+	  $('#v1').html('');
       var m = $.getJSON( "https://api.500px.com/v1/photos/search?term="+str+"&consumer_key=hbn1DGW8hBsaPxDviwkCA3yLZquFl8rLMzBafrw5", function(jd) {
       for (i = 0; i < 20; i++) { 
-        $('#v1').append('<img src="' + jd.photos[i].image_url + '">');
+        $('#v1').append('<img src="' + jd.photos[i].image_url + '" class="mynd">');
       }
     });
   });
+
+
+  if ($(window).scrollTop() >= ($(document).height() - $(window).height())*0.7){
+	alert('asdf');
+	if (process == false) {
+	  process = true;
+	  sida++;
+	  var str = $('#leit').val();
+	    $('#v1').html('');
+        var m = $.getJSON( "https://api.500px.com/v1/photos/search?term="+str+"&consumer_key=hbn1DGW8hBsaPxDviwkCA3yLZquFl8rLMzBafrw5&page="+sida, function(jd) {
+        for (i = 0; i < 20; i++) { 
+          $('#v1').append('<img src="' + jd.photos[i].image_url + '" class="mynd">');
+        }
+    });
+	}
+	process = true
+  } 
+ 
+});
