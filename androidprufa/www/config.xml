@@ -6,10 +6,10 @@
         id        = "com.phonegap.helloworld"
         version   = "1.0.0">
 
-    <name>500px lookup</name>
+    <name>Maps prufa</name>
 
     <description>
-        Looks up 500px images given a keyword
+        Maps prufa
     </description>
 
     <author href="http://phonegap.com" email="support@phonegap.com">
