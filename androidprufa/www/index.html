@@ -27,13 +27,16 @@
 		
 		  // You have to wait the MAP_READY event.
 		  map.on(plugin.google.maps.event.MAP_READY, onMapInit);
-		});
+		}, false);
 		
-		function onMapInit(map) {
-		}
+		    function onMapReady() {
+		      var button = document.getElementById("button");
+		      button.addEventListener("click", onBtnClicked, false);
+		    }
+		
+		    function onBtnClicked() {
+		      map.showDialog();
+		    }
 	</script>
-    <script async defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClRZNMxcuO2BSi3nynNQu7e7uFyzylWZ4&callback=initMap&libraries=geometry">
-    </script>
   </body>
 </html>
