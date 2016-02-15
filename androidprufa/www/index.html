@@ -17,33 +17,19 @@
   <body>
     <div id="map"></div>
 	<script type="text/javascript">
-	var map;
-	function teiknaLinu(litur,lina) {
-		var geralinu = new google.maps.Polyline({
-			path: google.maps.geometry.encoding.decodePath(lina),
-			strokeColor: litur,
-			strokeOpacity: 1.0,
-			strokeWeight: 4
+		document.addEventListener("deviceready", function() {
+		  // Define a div tag with id="map_canvas"
+		  var mapDiv = document.getElementById("map_canvas");
+		
+		  // Initialize the map plugin
+		  var map = plugin.google.maps.Map.getMap(mapDiv);
+		
+		  // You have to wait the MAP_READY event.
+		  map.on(plugin.google.maps.event.MAP_READY, onMapInit);
 		});
-		//geralinu.setPath(lina);
-		geralinu.setMap(map);
-		var a = 3;
-	}
-
-	function initMap() {
-		map = new google.maps.Map(document.getElementById('map'), {
-		  center: {lat: 65, lng: -20},
-		  zoom: 8
-		});
-
-		$.getJSON('http://sveinngauti.is/map/json.json',function(obj){
-			for (i = 0; i < obj.length; ++i) {
-				if (obj[i].Lina != null) {
-				teiknaLinu(obj[i].Linulitur,obj[i].Lina);
-				}
-			}
-		})
-	}
+		
+		function onMapInit(map) {
+		}
 	</script>
     <script async defer
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClRZNMxcuO2BSi3nynNQu7e7uFyzylWZ4&callback=initMap&libraries=geometry">
