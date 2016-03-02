@@ -64,7 +64,7 @@
     <gap:plugin name="org.apache.cordova.network-information" />
     <gap:plugin name="org.apache.cordova.splashscreen" />
     <gap:plugin name="org.apache.cordova.vibration" />
-    <gap:plugin name="cordova-plugin-armsoft-googlemaps">
+    <gap:plugin name="cordova-plugin-armsoft-googlemaps source="npm"">
             <param name="API_KEY_FOR_ANDROID" value="AIzaSyDBqcESRDwDZ-p6zEALfZ8ae3pB4A6uGsg" />
     </gap:plugin>
 
