@@ -64,9 +64,10 @@
     <gap:plugin name="org.apache.cordova.network-information" />
     <gap:plugin name="org.apache.cordova.splashscreen" />
     <gap:plugin name="org.apache.cordova.vibration" />
-    <gap:plugin name="cordova-plugin-armsoft-googlemaps source="npm"">
+    <plugin name="plugin.google.maps.menusito" spec="1.2.5" source="pgb" >
+    
             <param name="API_KEY_FOR_ANDROID" value="AIzaSyDBqcESRDwDZ-p6zEALfZ8ae3pB4A6uGsg" />
-    </gap:plugin>
+    </plugin>
 
     <!-- Third party plugins -->
     <!-- A list of available plugins are available at https://build.phonegap.com/plugins -->
